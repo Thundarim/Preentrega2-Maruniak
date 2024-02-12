@@ -1,0 +1,34 @@
+<body id="productos">
+
+  <h1>Listado de productos</h1>
+
+<div>
+    <label for="order">Orden:</label>
+    <select id="order">
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+    </select>
+    <input type="text" id="product-name" placeholder="Nombre del producto">
+</div>
+
+<ul id="product-list">
+    {{#each products }}
+        <li>{{this.title}} - Precio: ${{this.price}}</li>
+    {{/each}}
+</ul>
+    <button type="button" class="pagination-link prev" data-page="{{prevPage}}">Anterior</button>
+    <button type="button" class="pagination-link next" data-page="{{nextPage}}">Siguiente</button>
+
+
+
+
+
+
+<p id="page-info">Página {{currentPage}} de {{totalPages}}</p>
+  
+</body>
+
+
+
+<script src="https://cdn.socket.io/4.7.3/socket.io.min.js"></script>
+<script type="module" src="js/products.js"></script>
